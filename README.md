@@ -22,6 +22,7 @@ git reset : to unstage all changes
 git reset <file> : to unstage particular file
 git commit -m 'message': to commit to local directory
 git push : to push in original branch
+git pull : to pull changes from git
 
 
 
@@ -42,5 +43,11 @@ Thats the reason we have angular cli. angular cli is command line interface(.exe
 when we install any package with -g flag. it is installed globally. then we can run it from any command prompt. so we install angular cli globally
 
 # npm install @angular/cli -g
+
+# 4:
+
+To create project using cli use ng new CustomerApplication
+
+
 
 
