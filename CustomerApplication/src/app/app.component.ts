@@ -8,3 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'CustomerApplication';
 }
+
+@Component({
+})
+export class App1Component {
+  title = 'CustomerApplication';
+}
