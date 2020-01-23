@@ -45,8 +45,11 @@ when we install any package with -g flag. it is installed globally. then we can 
 # npm install @angular/cli -g
 
 # 4:
-
 To create project using cli use ng new CustomerApplication
+
+# 5:
+
+ng serve will do compiling anf bundling. it takes whole application in RAM compile it, bundle it and host it.
 
 
 
