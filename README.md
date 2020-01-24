@@ -155,7 +155,7 @@ AFTER BUILD INSIDE DIST THERE ARE SOME IMP FILE GENERATED: these 5 file needed w
 so when you load application with ng serve it comes from in-memory but when you load from dist it loads from physical location.
 
 
-#  -----------------------------------------------------------LAB2--------------------------------------------------------------
+#  --------LAB2--------------
 
 
 # Angular file naming convention: https://angular.io/guide/styleguide 
@@ -205,6 +205,14 @@ If you want to see versions of particular npm packages use following command
  
  # package.lock.json is file which holds exact version of all npm packages.
 
+ # -----------LAB3--------------
+ 
+ # ROUTING  : routing helps us in navigating between each component.
+ 
+ # VVI only master page will have selecter. this will be the bootstrap component.
+ 
+ 
+ 
 
 
 
