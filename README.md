@@ -188,7 +188,25 @@ this file talks how npm versioning works. Version is divided into three parts
 
 # EXAMPLE 
 6.1.0 : first no is major version, second no is minor version, third no is revision. 
-if major version increase this is breaking changes. it means he has added new feature and removed old one
+If major version increase this is breaking changes. it means he has added new feature and removed old one. 
+if minor version is increases it means there are not any breaking changes.
+Revision is incremented for patched and bug fixes.
+
+If you want to see versions of particular npm packages use following command
+
+# npm view jquery versions  : to show all jquery version
+
+# npm view rxjs versions  : to show all rxjs version
+
+ # "jquery": "^3.4.1", : if you put carrot sign and say npm install it will install latest minor and Revision changes.
+ # "jquery": "~3.4.1", : if you put tild sign and say npm install it will install Revision changes only.
+ 
+ # Npm does not increment major version automatically.
+ 
+ # package.lock.json is file which holds exact version of all npm packages.
+
+
+
 
 
 
