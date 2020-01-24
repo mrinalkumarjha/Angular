@@ -154,7 +154,42 @@ AFTER BUILD INSIDE DIST THERE ARE SOME IMP FILE GENERATED: these 5 file needed w
  
 so when you load application with ng serve it comes from in-memory but when you load from dist it loads from physical location.
 
+
+#  -----------------------------------------------------------LAB2--------------------------------------------------------------
+
+
+# Angular file naming convention: https://angular.io/guide/styleguide 
+
+
+# Directive :
+directive helps you to manipulate dom easily. Following are types of directive.
+
+ > ngModel : used to do binding from ui to component.  ex : <input [(ngModel)]="CustomerModel.CustomerCode" type="text">
+
+ if you need to pass data from ui to component use  ()  : ex : (ngModel)="CustomerModel.CustomerCode"
+ if you need to pass data from component to ui use  []  : ex : [ngModel]="CustomerModel.CustomerCode"
+ For two directional use [()] "banana in the box"  	[()] : : ex : [(ngModel)]="CustomerModel.CustomerCode"
+
  
+# *ngFor : the For LOOP
+
+ <tr *ngFor="let cust of CustomerModels">
+        <td>{{cust.CustomerCode}}</td>
+        <td>{{cust.CustomerName}}</td>
+        <td>{{cust.CustomerAmount}}</td>
+    </tr>
+
+
+# Create array like this :   CustomerModels: Array<Customer> = new Array<Customer>();
+
+
+# PackageLock.Json :
+this file talks how npm versioning works. Version is divided into three parts
+
+# EXAMPLE 
+6.1.0 : first no is major version, second no is minor version, third no is revision. 
+if major version increase this is breaking changes. it means he has added new feature and removed old one
+
 
 
 
