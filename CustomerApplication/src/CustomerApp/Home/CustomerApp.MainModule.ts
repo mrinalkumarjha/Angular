@@ -3,20 +3,14 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-import { CustomerComponent } from './Customer/CustomerApp.CustomerComponent';
-import { SupplierComponent } from './Supplier/CustomerApp.SupplierComponent';
-import { HomeComponent } from './Home/CustomerApp.HomeComponent';
-import { MasterPageComponent } from './Home/CustomerApp.MasterPageComponent';
-import { from } from 'rxjs';
-
-import { MainRoutes } from './Routing/CustomerApp.MainRouting';
+import { HomeComponent } from './CustomerApp.HomeComponent';
+import { MasterPageComponent } from './CustomerApp.MasterPageComponent';
+import { MainRoutes } from '../Routing/CustomerApp.MainRouting';
 
 
 
 @NgModule({
   declarations: [
-    CustomerComponent,
-    SupplierComponent,
     HomeComponent,
     MasterPageComponent
   ],
@@ -29,4 +23,4 @@ import { MainRoutes } from './Routing/CustomerApp.MainRouting';
   providers: [],
   bootstrap: [MasterPageComponent]
 })
-export class CustomerModule { }
+export class MainModule { }

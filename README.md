@@ -169,6 +169,10 @@ directive helps you to manipulate dom easily. Following are types of directive.
  if you need to pass data from ui to component use  ()  : ex : (ngModel)="CustomerModel.CustomerCode"
  if you need to pass data from component to ui use  []  : ex : [ngModel]="CustomerModel.CustomerCode"
  For two directional use [()] "banana in the box"  	[()] : : ex : [(ngModel)]="CustomerModel.CustomerCode"
+ 
+ > [routerLink]   : it is directive
+ 
+ <a [routerLink]="['Home']">Home</a> : checks the Home link for in router collection.
 
  
 # *ngFor : the For LOOP
@@ -211,6 +215,37 @@ If you want to see versions of particular npm packages use following command
  
  # VVI only master page will have selecter. this will be the bootstrap component.
  
+ # Implement lazy loading  : load on demand
+ if we dont implement lazy loading, in main.ts file all component will be loaded on page load. so what if you want to implement
+like when you load only master page should load and then rest page should load on demand.
+SO we will implement lazy loading for this. So here are steps needed
+
+1st : divide project into smaller module
+ex : create 1 module for home and master page. and create feature module for rest.
+
+2nd : self contained route for self contained module.
+ex: if you have 3 module create 3 seperate routing file for each module.
+
+following are way to do lazy load.
+
+export const MainRoutes = [
+    { path: 'Home', component: HomeComponent },
+    { path: 'Customer', loadChildren: '../Customer/CustomerApp.CustomerModule#CustomerModule' },
+    { path: 'Supplier', loadChildren: '../Supplier/CustomerApp.SupplierModule#SupplierModule' },
+    { path: '', component: HomeComponent }
+];
+
+# loadChildren is way by which we load feature module on demand.
+
+# forRoot is only defined in main module. forChild is used in feature module.
+
+# Remove the Browsermodule and import common module in feature module. as browsermodule is already loaded in main module, so angular
+# will throw error if used in feature module.
+ex : import { CommonModule } from '@angular/common';
+
+#  so after lazy loading if you do ng build you should be getting bundle for feature modules also.
+
+
  
  
 
