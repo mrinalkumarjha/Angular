@@ -1,12 +1,30 @@
-Customer Code: <input [(ngModel)]="CustomerModel.CustomerCode" type="text"><br>
-Customer Name: <input [(ngModel)]="CustomerModel.CustomerName" type="text"><br>
-Customer Amount: <input [(ngModel)]="CustomerModel.CustomerAmount" type="text"><br>
-<input type="button" value="Add" (click)="Add()" />
-<br>
+<!-- 2nd Connect using [formGroup] directive -->
 
-{{CustomerModel.CustomerCode}}
-{{CustomerModel.CustomerName}}
-{{CustomerModel.CustomerAmount}}
+<form [formGroup]= "CustomerModel.formCustomerGroup">
+Customer Code: <input formControlName="CustomerCodeControl" 
+[(ngModel)]="CustomerModel.CustomerCode" type="text"><br>
+Customer Name: <input formControlName="CustomerNameControl"
+ [(ngModel)]="CustomerModel.CustomerName" type="text"><br>
+
+Customer Amount: <input [(ngModel)]="CustomerModel.CustomerAmount" 
+[ngModelOptions]="{standalone: true}" type="text"><br>
+
+<input [disabled]="!(CustomerModel.formCustomerGroup.valid)" type="button" value="Add" (click)="Add()" />
+<br>
+</form>
+
+<div *ngIf="CustomerModel.formCustomerGroup.dirty"
+ [hidden]="!(hasError('pattern','CustomerCodeControl'))">
+Customer code pattern not valid</div>
+
+<div *ngIf="CustomerModel.formCustomerGroup.dirty"
+[hidden]="!(hasError('required','CustomerNameControl'))">Customer name is required</div>
+
+
+<div *ngIf="CustomerModel.formCustomerGroup.dirty"
+[hidden]="!(hasError('required','CustomerCodeControl'))">
+Customer code is required</div>
+
 
 
 <table>

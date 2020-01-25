@@ -173,6 +173,12 @@ directive helps you to manipulate dom easily. Following are types of directive.
  > [routerLink]   : it is directive
  
  <a [routerLink]="['Home']">Home</a> : checks the Home link for in router collection.
+ 
+ > [formGroup] : directive to connect form with model
+ ex : <form [formGroup]= "CustomerModel.formCustomerGroup">
+ 
+ > [disabled] : directive to enable disable control by condition.
+ ex : <input [disabled]="CustomerModel.formCustomerGroup.valid" type="button" value="Add" (click)="Add()" />
 
  
 # *ngFor : the For LOOP
@@ -246,9 +252,47 @@ ex : import { CommonModule } from '@angular/common';
 #  so after lazy loading if you do ng build you should be getting bundle for feature modules also.
 
 
+ # VALIDATION IN Angular
  
- 
+ 1 Appripriate place of applying validation between ui , component and model is : model. since defination of model is
+ business logic + data . hence business logic here is validation. 
 
+To apply validation in model we need to import following from angular.
+
+import { NgForm, FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+at top there is formgroup then formcontrol then validations. formbuilder helps us to create tree model of FormGroup, FormControl, Validators
+
+So applying validation is three step process . CCC process
+
+here first C is create, 2nd C is connect, 3rd C is CHECK.
+
+// CREATE : we create the validation object model.
+// Connect : we connect the validation to ui
+// Check : IsValid, IsDirty 
+
+
+# Creating centralized method in controller for validation
+
+hasError(typeofValidator: string, controlname: string): boolean {
+  return this.CustomerModel
+  .formCustomerGroup
+  .contains[controlname]
+  .hasError(typeofValidator);
+}
+
+// call like this
+
+<div *ngIf="CustomerModel.formCustomerGroup.dirty"
+ [hidden]="!(hasError('pattern','CustomerCodeControl'))">
+Customer code pattern not valid</div>
+
+<div *ngIf="CustomerModel.formCustomerGroup.dirty"
+[hidden]="!(hasError('required','CustomerNameControl'))">Customer name is required</div>
+
+
+<div *ngIf="CustomerModel.formCustomerGroup.dirty"
+[hidden]="!(hasError('required','CustomerCodeControl'))">
+Customer code is required</div>
 
 
 
