@@ -363,6 +363,14 @@ eventemittor help us to create event by which output will travel.
 Note : we normally use element name like grid-ui (use hiphen) as this prevent our element to collied from html element
 
 
+# Fake json server
+npm install -g json-server
+
+# run json server
+
+json-server --watch db.json
+
+
 
 
 
