@@ -1,27 +1,26 @@
-export interface ILogger {
+
+// browser console
+// email
+// db
+export interface ILogger{
     Log();
 }
-
 export class BaseLogger implements ILogger {
-    Log() {
-        console.log('base log');
+    Log(){
     }
 }
-
-export class ConsoleLogger implements BaseLogger {
+export class ConsoleLogger extends BaseLogger {
     Log() {
-        console.log('logging from console logger');
+        console.log('Using console logger');
     }
 }
-
-export class DbLogger implements BaseLogger {
+export class DbLogger extends BaseLogger {
     Log() {
-        console.log('Logging from Db logger');
+        console.log('using Db logger');
     }
 }
-
-export class FileLogger implements BaseLogger {
+export class FileLogger extends BaseLogger{
     Log() {
-        console.log('Logging from file logger');
+        console.log('using file logger');
     }
 }

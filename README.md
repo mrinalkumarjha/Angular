@@ -345,6 +345,25 @@ in constructor:
     this.logger.Log();
   }
  
+ 
+ 
+# INPUT OUTPUT AND EVENT EMITTOR
+
+we can create user control with input output and event emittor. Refer  UserControl folder of this project for all detail.
+
+if we need to pass data from ui to component we use @input
+
+
+if we need to pass data from component to ui we use @output
+
+
+eventemittor help us to create event by which output will travel.
+
+
+Note : we normally use element name like grid-ui (use hiphen) as this prevent our element to collied from html element
+
+
+
 
 
 

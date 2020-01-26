@@ -1,34 +1,32 @@
-import { Component, Injector } from '@angular/core';
-import { Customer } from './CustomerApp.model';
-import { BaseLogger } from '../Utility/CustomerApp.Logger';
-
+import { Component , Injector  } from '@angular/core';
+import {Customer} from "./CustomerApp.model"
+import {BaseLogger} from "../Utility/CustomerApp.Logger"
 @Component({
   templateUrl: './CustomerApp.CustomerView.html'
 })
-export class CustomerComponent {
+export  class CustomerComponent {
   title = 'CustomerApplication';
-  CustomerModel: Customer = new Customer();
-  CustomerModels: Array<Customer> = new Array<Customer>();
-  logger: BaseLogger = null;
-
-  /**
-   *
-   */
-  constructor(_injector : Injector) {
-    this.logger = _injector.get('2');
-    this.logger.Log();
+  CustomerModel : Customer = new Customer();
+  CustomerModels :Array<Customer> = new Array<Customer>();
+  Logobj : BaseLogger = null;
+  constructor(_injector:Injector){
+    this.Logobj = _injector.get("1");
+    this.Logobj.Log();
   }
-
-  Add() {
+  SelectCustomer(_selected:Customer){
+    this.CustomerModel = _selected;
+  }
+  Add(){
     this.CustomerModels.push(this.CustomerModel);
-    this.CustomerModel = new Customer(); // to empty customer ui after adding
+    this.CustomerModel = new Customer();// clear UI
   }
-
-hasError(typeofValidator: string, controlname: string): boolean {
-  return this.CustomerModel
-  .formCustomerGroup
-  .contains[controlname]
-  .hasError(typeofValidator);
+  
+  hasError(typeofvalidator:string,
+        controlname:string) : boolean{
+          return this.CustomerModel
+                .formCustomerGroup
+                .controls[controlname]
+                .hasError(typeofvalidator);
+  }
 }
 
-}

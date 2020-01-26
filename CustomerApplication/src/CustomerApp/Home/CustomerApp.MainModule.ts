@@ -1,39 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-
-import { HomeComponent } from './CustomerApp.HomeComponent';
+import {FormsModule} from "@angular/forms"
+import {RouterModule} from "@angular/router"
 import { MasterPageComponent } from './CustomerApp.MasterPageComponent';
+import { HomeComponent } from './CustomerApp.HomeComponent';
 import { MainRoutes } from '../Routing/CustomerApp.MainRouting';
-import { ILogger, ConsoleLogger, BaseLogger, DbLogger } from '../Utility/CustomerApp.Logger';
+import { DbLogger, BaseLogger, ConsoleLogger } from '../Utility/CustomerApp.Logger';
 
-
-// make http call and fill it.
-const providerCollection: any =[];
-providerCollection.push( { // centralized DI
-     provide: BaseLogger, useClass : DbLogger },
-);
-// conditional
-providerCollection.push({provide: '1', useClass: DbLogger});
-providerCollection.push({provide: '2', useClass: ConsoleLogger})
+var providerscoll:any = [];
+// http call get this from the server
+providerscoll.push({ provide: "1", useClass: DbLogger });
+providerscoll.push({ provide: "2", useClass: ConsoleLogger });
+providerscoll.push({ provide: BaseLogger, useClass: ConsoleLogger });
 
 @NgModule({
   declarations: [
-    HomeComponent,
-    MasterPageComponent
+      MasterPageComponent,
+      HomeComponent
   ],
   imports: [
-    // This section is used to import all module used in Customer module
     RouterModule.forRoot(MainRoutes),
-    BrowserModule,
-    FormsModule
+    BrowserModule,FormsModule
   ],
-  providers: [
-    // for dependency injection.
-    // As javascript dont understand interface so we use BaseLogger instead if interface while providiing in main module.
-    providerCollection
-  ],
+  providers: [providerscoll]
+,
   bootstrap: [MasterPageComponent]
 })
 export class MainModule { }

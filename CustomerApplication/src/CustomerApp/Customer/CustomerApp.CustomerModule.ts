@@ -1,20 +1,15 @@
-import { CommonModule  } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-
+import {FormsModule , ReactiveFormsModule} from "@angular/forms"
+import {RouterModule} from "@angular/router"
 import { CustomerComponent } from './CustomerApp.CustomerComponent';
+import {GridComponent} from '../UserControl/CustomerApp.GridComponent';
 import { CustomerRoutes } from '../Routing/CustomerApp.CustomerRouting';
-
-
-
 @NgModule({
   declarations: [
-    CustomerComponent
+     CustomerComponent , GridComponent
   ],
   imports: [
-    // This section is used to import all module used in Customer module
-    // as this is for child route so we use forChild here
     RouterModule.forChild(CustomerRoutes),
     CommonModule,
     FormsModule,
