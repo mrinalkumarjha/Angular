@@ -6,8 +6,17 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './CustomerApp.HomeComponent';
 import { MasterPageComponent } from './CustomerApp.MasterPageComponent';
 import { MainRoutes } from '../Routing/CustomerApp.MainRouting';
+import { ILogger, ConsoleLogger, BaseLogger, DbLogger } from '../Utility/CustomerApp.Logger';
 
 
+// make http call and fill it.
+const providerCollection: any =[];
+providerCollection.push( { // centralized DI
+     provide: BaseLogger, useClass : DbLogger },
+);
+// conditional
+providerCollection.push({provide: '1', useClass: DbLogger});
+providerCollection.push({provide: '2', useClass: ConsoleLogger})
 
 @NgModule({
   declarations: [
@@ -20,7 +29,11 @@ import { MainRoutes } from '../Routing/CustomerApp.MainRouting';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    // for dependency injection.
+    // As javascript dont understand interface so we use BaseLogger instead if interface while providiing in main module.
+    providerCollection
+  ],
   bootstrap: [MasterPageComponent]
 })
 export class MainModule { }

@@ -295,6 +295,59 @@ Customer code pattern not valid</div>
 Customer code is required</div>
 
 
+# DEPENDENCY INJECTION : helps in creating loosely coupled architecture.
+
+Definition of good architecture : Change at one place should not lead to change at many place.
+
+for example logging into browser console,email, file , db and more. and in future more looger can be added.
+
+so we create interface to following consistency.
+
+Donot create concreate class reference and client will use only Interface like ILogger. client dosent know it is
+file logger, db logger or console logger.
+
+Creation of object should be done somewhere else. All class will point towards ILogger interface only. 
+
+Object creation will heppen by some provider. provider will inject classes to component.
+
+SO we use providers section of main module to create container . it will inject object based on confuguration.
+
+As javascript dont understand interface so we use BaseLogger instead if interface while providiing in main module.
+
+Two types of DI :
+
+Centralised DI : in centralised if we change logger type in provider it will reflect all places.
+
+Conditional DI : here client has authority to make choice to inject type of object. for conditional DI we use tokens.
+tokens are key,  by using that key client points to concreat classes.
+
+Now client use injector to inject object. injector holds collection of provider.
+
+in main module :
+
+providers: [
+    // for dependency injection.
+    // As javascript dont understand interface so we use BaseLogger instead if interface while providiing in main module.
+    {
+      // centralized DI
+      provide: BaseLogger,
+      useClass : DbLogger
+    },
+    {provide: '1', useClass: DbLogger},
+    {provide: '2', useClass: ConsoleLogger}
+  ]
+  
+  
+in constructor:
+
+ constructor(_injector : Injector) {
+    this.logger = _injector.get('2');
+    this.logger.Log();
+  }
+ 
+
+
+
 
 
 
