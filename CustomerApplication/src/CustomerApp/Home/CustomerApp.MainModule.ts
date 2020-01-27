@@ -1,13 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from "@angular/forms"
-import {RouterModule} from "@angular/router"
+import { FormsModule } from "@angular/forms"
+import { RouterModule } from "@angular/router"
+import { HttpClientModule } from '@angular/common/http';
 import { MasterPageComponent } from './CustomerApp.MasterPageComponent';
 import { HomeComponent } from './CustomerApp.HomeComponent';
 import { MainRoutes } from '../Routing/CustomerApp.MainRouting';
 import { DbLogger, BaseLogger, ConsoleLogger } from '../Utility/CustomerApp.Logger';
+import { from } from 'rxjs';
 
-var providerscoll:any = [];
+const providerscoll: any = [];
 // http call get this from the server
 providerscoll.push({ provide: "1", useClass: DbLogger });
 providerscoll.push({ provide: "2", useClass: ConsoleLogger });
@@ -15,15 +17,15 @@ providerscoll.push({ provide: BaseLogger, useClass: ConsoleLogger });
 
 @NgModule({
   declarations: [
-      MasterPageComponent,
-      HomeComponent
+    MasterPageComponent,
+    HomeComponent
   ],
   imports: [
     RouterModule.forRoot(MainRoutes),
-    BrowserModule,FormsModule
+    BrowserModule, FormsModule, HttpClientModule
   ],
   providers: [providerscoll]
-,
+  ,
   bootstrap: [MasterPageComponent]
 })
 export class MainModule { }

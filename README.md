@@ -371,6 +371,9 @@ npm install -g json-server
 json-server --watch db.json
 
 
+# DTO : data transfer object
+
+always create light weight dto for transfering data. dto has only data no logic no validation.
 
 
 
