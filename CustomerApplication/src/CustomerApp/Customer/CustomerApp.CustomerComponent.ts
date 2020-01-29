@@ -10,12 +10,14 @@ export class CustomerComponent {
   CustomerModel: Customer = new Customer();
   CustomerModels: Array<Customer> = new Array<Customer>();
   Logobj: BaseLogger = null;
+  Disable = false;
   constructor(_injector: Injector, public http: HttpClient) {
     this.Logobj = _injector.get("1");
     this.Logobj.Log();
   }
 
   PostToServer() {
+    this.Disable = true;
     var custDto: any = {};
     custDto.CustomerCode = this.CustomerModel.CustomerCode;
     custDto.CustomerName = this.CustomerModel.CustomerName;
@@ -32,8 +34,8 @@ export class CustomerComponent {
         err => this.Error(err));
   }
 
-  Error(res) {
-    console.debug(res.json());
+  Error(err) {
+    console.log(err);
   }
 
   Success(res) {
@@ -41,12 +43,15 @@ export class CustomerComponent {
   }
 
   SuccessGet(res) {
-    this.CustomerModel = res;
+    this.CustomerModels = res;
+    this.Disable = false;
+    this.CustomerModel = new CustomerModel()
   }
 
   SelectCustomer(_selected: Customer) {
     this.CustomerModel = _selected;
   }
+
   Add() {
     this.CustomerModels.push(this.CustomerModel);
     this.CustomerModel = new Customer();// clear UI

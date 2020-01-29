@@ -7,52 +7,22 @@
       "CustomerAmount": "1000.22"
     },
     {
-      "id": 2,
-      "CustomerCode": "1002",
-      "CustomerName": "karan",
-      "CustomerAmount": "999.22"
+      "CustomerCode": "5555",
+      "CustomerName": "double",
+      "CustomerAmount": "4545",
+      "id": 2
     },
     {
-      "CustomerCode": "5444",
-      "CustomerName": "test",
-      "CustomerAmount": "5454",
+      "CustomerCode": "5555",
+      "CustomerName": "double",
+      "CustomerAmount": "4545",
       "id": 3
     },
     {
-      "CustomerCode": "6756",
-      "CustomerName": "fghjfg",
-      "CustomerAmount": "56",
-      "id": 4
-    },
-    {
-      "CustomerCode": "5443",
-      "CustomerName": "dfgdfs",
-      "CustomerAmount": "5435",
-      "id": 5
-    },
-    {
-      "CustomerCode": "6566",
-      "CustomerName": "hgf",
-      "CustomerAmount": "5654",
-      "id": 6
-    },
-    {
-      "CustomerCode": "5445",
+      "CustomerCode": "5543",
       "CustomerName": "hfgh",
-      "CustomerAmount": "4545",
-      "id": 7
-    },
-    {
-      "CustomerCode": "5454",
-      "CustomerName": "fhfgh",
-      "CustomerAmount": "6546",
-      "id": 8
-    },
-    {
-      "CustomerCode": "5444",
-      "CustomerName": "fghgh",
-      "CustomerAmount": "655",
-      "id": 9
+      "CustomerAmount": "5654",
+      "id": 4
     }
   ]
 }

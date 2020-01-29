@@ -370,12 +370,47 @@ npm install -g json-server
 
 json-server --watch db.json
 
+json-server --watch --delay 5000 db.json  : now server will delay the response by 5 sec
+
 
 # DTO : data transfer object
 
 always create light weight dto for transfering data. dto has only data no logic no validation.
 
 
+# Interceptor :
+interceptor help us to make preprocessing logic before http request is made.
+ex : appending header info. adding authentication header to request.
+
+for creating interceptor we need to implement HttpInterceptor to class.
+
+ex : import { HttpInterceptor, HttpHandler, HttpRequest, HttpEvent, HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
+
+@Injectable()
+export class MyInterceptor implements HttpInterceptor {
+
+    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+
+        req = req.clone(
+            {
+                setHeaders: { securityKey: 'key' }
+            });
+        return next.handle(req);
+    }
+
+}
+
+
+and add in dependencies in module : when you have multiple class to be injected use multi = true. so now all subsequent http call will be appended by header securityKey
+ex:
+providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true }
+  ]
+  
+  
+# Double entry data bug : if there are late response so user will click twice and duplicate data will be entered.
 
 
 
