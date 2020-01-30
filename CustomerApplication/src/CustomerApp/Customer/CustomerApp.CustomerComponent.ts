@@ -45,7 +45,7 @@ export class CustomerComponent {
   SuccessGet(res) {
     this.CustomerModels = res;
     this.Disable = false;
-    this.CustomerModel = new CustomerModel()
+    this.CustomerModel = new Customer();
   }
 
   SelectCustomer(_selected: Customer) {
@@ -54,7 +54,7 @@ export class CustomerComponent {
 
   Add() {
     this.CustomerModels.push(this.CustomerModel);
-    this.CustomerModel = new Customer();// clear UI
+    this.CustomerModel = new Customer(); // clear UI
   }
 
   hasError(typeofvalidator: string,

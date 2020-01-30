@@ -23,6 +23,24 @@
       "CustomerName": "hfgh",
       "CustomerAmount": "5654",
       "id": 4
+    },
+    {
+      "CustomerCode": "5566",
+      "CustomerName": "gfdgdf",
+      "CustomerAmount": "5654",
+      "id": 5
+    },
+    {
+      "CustomerCode": "1001",
+      "CustomerName": "mrinal",
+      "CustomerAmount": "1000",
+      "id": 6
+    },
+    {
+      "CustomerCode": "5465",
+      "CustomerName": "tryrt",
+      "CustomerAmount": "645",
+      "id": 7
     }
   ]
 }

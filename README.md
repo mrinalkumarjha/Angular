@@ -411,8 +411,8 @@ providers: [
   
   
 # Double entry data bug : if there are late response so user will click twice and duplicate data will be entered.
-
-
+ to overcome this just disable button after submitting..
+ 
 
 
 
