@@ -127,7 +127,9 @@ But someone has to invoke this main.ts file. and that is done by index.html.
 what happens is application start. index html is requested. index.html calls main.ts. main.ts calls Apppmodule by bootstraping , app module then goes and load 
 app component as it is bootstrap component. and app component goes and load html. 
 
-life cycle Link : https://ibb.co/JFzBBfS
+life cycle Link : 
+![Life Cycle Angular](https://ibb.co/JFzBBfS)
+https://ibb.co/JFzBBfS
 
 
 # 15 Polyfils.ts
