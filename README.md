@@ -1,3 +1,12 @@
+# Install angular
+	1: Install node js (https://nodejs.org/en/download/)
+	   to check version npm -v
+	2: Install typescript from node command prompt (npm install -g typescript)
+	    to chk use tsc command
+	3: Install Angular CLI (npm install -g @angular/cli)
+	    to check angular cli version : ng version
+	    
+
 # GIT
 …or create a new repository on the command line
 echo "# Angular" >> README.md
@@ -415,6 +424,9 @@ providers: [
 # Double entry data bug : if there are late response so user will click twice and duplicate data will be entered.
  to overcome this just disable button after submitting..
  
+
+# Installing a specific version of angular 2 +
+https://medium.com/@ferie/how-to-install-a-specific-angular-version-16d4766341f3
 
 
 
