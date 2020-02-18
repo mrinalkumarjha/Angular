@@ -461,6 +461,10 @@ providers: [
 # Installing a specific version of angular 2 +
 https://medium.com/@ferie/how-to-install-a-specific-angular-version-16d4766341f3
 
+# Production build of angular app corrosponding to virtual dir
+	ng build --prod --base-href /order
+	/order is virtial directory of iis folder in which project is going to deploy.
+
 
 
 
