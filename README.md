@@ -5,7 +5,40 @@
 	    to chk use tsc command
 	3: Install Angular CLI (npm install -g @angular/cli)
 	    to check angular cli version : ng version
-	    
+
+# @ngModule: Our @NgModule decorator has four keys: declarations, imports, providers, and bootstrap.
+	declarations specifies the components that are defined in this module.
+	You have to declare components in a NgModule before you can use them in your templates.
+	You can think of an NgModule a bit like a “package” and declarations states what
+	components are “owned by” this module.
+	
+	imports describes which dependencies this module has. We’re creating a browser
+	app, so we want to import the BrowserModule.
+	
+	import vs. imports?
+	you put something in your NgModule’s imports if
+	you’re going to be using it in your templates or with dependency injection.
+	
+	providers is used for dependency injection. So to make a service available to be
+	injected throughout our application, we will add it here.
+	
+	bootstrap tells Angular that when this module is used to bootstrap an app, we need
+	to load the AppComponent component as the top-level component.
+	
+# Html element reference variable.
+
+<input name="title" #newtitle>
+This markup tells Angular to bind this <input> to the variable newtitle. The
+#newtitle syntax is called a resolve. The effect is that this makes the variable
+newtitle available to the expressions within this view.
+newtitle is now an object that represents this input DOM element (specifically, the
+type is HTMLInputElement). Because newtitle is an object, that means we get the
+value of the input tag using newtitle.value.
+
+# @HostBinding() decorator 
+TODO
+
+	
 
 # GIT
 …or create a new repository on the command line
