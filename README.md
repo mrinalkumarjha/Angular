@@ -5,6 +5,8 @@
 	    to chk use tsc command
 	3: Install Angular CLI (npm install -g @angular/cli)
 	    to check angular cli version : ng version
+	    
+	  Note: to install angular without cli use link https://medium.com/angular-in-depth/setting-up-angular-from-scratch-1f518c65d8ab
 
 # @ngModule: Our @NgModule decorator has four keys: declarations, imports, providers, and bootstrap.
 	declarations specifies the components that are defined in this module.
