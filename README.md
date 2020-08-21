@@ -5,6 +5,12 @@
 	    to chk use tsc command
 	3: Install Angular CLI (npm install -g @angular/cli)
 	    to check angular cli version : ng version
+	    cli help us to create basic project structure for project. same as when you create new project in asp.net you get basic structure of project.
+	    All the cli command starts with ng. ex: ng serve, ng new
+	    
+	    ng --version : to check cli version.
+	    ng serve : compiles code in inmemory. it is fast as it is in ram. when we ship in production we compile in hard disk.
+	    
 	    
 	  Note: to install angular without cli use link https://medium.com/angular-in-depth/setting-up-angular-from-scratch-1f518c65d8ab
 
@@ -130,6 +136,8 @@ when you say # npm install it will install all the framework defined in package.
 there are 2 section dependencies and devdependencies. devdependencies are thing which will not go to production. it is used in develpoment phase only. for example
 testing framework like KARMA we dont need in production. Compiler is also used in coding phase only.
 in dependencies we refer core component we will use in project. So this is the file by which angular is being installed.
+
+All line you see here with @angular it comes from angular team. others which is not with @angular like rxjs , zone.js it does not belong to angular team.
 
 # Typescript: tsconfig.json : tsconfig holds the typescript configuration.
 
