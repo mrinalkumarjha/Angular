@@ -1,0 +1,115 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// literal way of creating object.
+        // var cust = {}; 
+        // cust.name = "mrinal";
+        // cust.age = 30;
+        // cust.Add = function(){
+        //     alert('added');
+        // }
+
+        // cust.Add();
+
+
+// constructor way of creating object
+
+        // function Customer(){
+        //     this.Name = "mrinal jha";
+        //     this.Add = function(){
+        //         alert(this.Name);
+        //     }
+        // }
+
+        // var x = new Customer();
+        // x.Add();
+
+
+    // Javascript is infered
+        // var x= 10;
+        // alert(typeof(x));
+        // x= "mrinal";
+        // alert(typeof(x));
+
+
+    //Variable not existing and undefined are two different thing.
+
+           // alert(x); // here x is not defined so we will get reference error x is not defined.
+
+            //var a; // here we have declared it but not defined it 
+            //alert(a); //  so undefined error will come.
+
+    
+    // javascript variables are hoisted(picking up).
+
+           // alert(x); // here we will get undefined error because what javascript compiler will do internally is
+                    // it will pick var x from below and place on top like var x; and since x is declared so we will get
+                    // undefined error. Note hoisting only happens if we use var. if we dont use var we will get reference error.
+            //var x = 0;
+
+    // Using var and not using var - global pollution.
+
+            // function show(){
+            //     //var x=0;
+            //     x=0;  // this form create global pollution
+            //     x++;
+            // }
+            
+            // show();
+            // alert(x);
+
+    // Javascript is also known for shadowing.
+
+    // function show(){
+    //     var x=1;
+    //     alert(x);
+    // }
+    // function show(){
+    //     var x=50;
+    //     alert(x);
+    // }
+    // show();
+
+
+// to remove shadowing we use annonmus function
+
+        // IIFE : immidiately invoked function expression
+    //  var y =   (function (){
+    //         var x=100;
+    //        return x;
+    //     })();
+
+    //     alert(y);
+
+// Closures
+
+        function Customer(){
+            var _name = ""; // encapsulation .. hiding something from outside.
+            var _code = "";
+            var _connection = "";
+            // following code is closure. function inside function.
+            var _add = function(){
+                alert(_name);
+            }
+
+            // abstraction in js // show only what is necessary. here we are exposing private variable.
+            return{  
+                name= _name,
+                code=_code,
+                Add= _add
+            };
+
+        }
+        
+        var x = new Customer();
+        x.name = "mrinal";
+        alert(x.name)
+
+    </script>
+</body>
+</html>
