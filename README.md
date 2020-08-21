@@ -7,9 +7,12 @@
 	    to check angular cli version : ng version
 	    cli help us to create basic project structure for project. same as when you create new project in asp.net you get basic structure of project.
 	    All the cli command starts with ng. ex: ng serve, ng new
+      angular cli use angular.json
 	    
 	    ng --version : to check cli version.
 	    ng serve : compiles code in inmemory. it is fast as it is in ram. when we ship in production we compile in hard disk.
+      ng build : compiles into harddisk
+      ng build --prod : compiles minified code into harddisk.
 	    
 	    
 	  Note: to install angular without cli use link https://medium.com/angular-in-depth/setting-up-angular-from-scratch-1f518c65d8ab
@@ -172,7 +175,7 @@ so component has binding code of ui and model.
 it is used to connect ui to ts code. ex @Component decorator makes typescript file a component is used to connect html file to ts file. in java decorator are
 named by dataannotations. in dotnet we call it attribute. @component comes from angular core
 
-# 14 Main.ts :
+# 14 Main.ts : Entry point of angular application
 complicated application can have lots of modules. so angular needs to know from these modules which one is startup module. That is defined by main.ts file.
 here we import all modules and tells angular to bootstrap module. 
 But someone has to invoke this main.ts file. and that is done by index.html. 
@@ -197,6 +200,8 @@ So we can see that series of steps need to performed before going live.  And # w
 compress it and put it to final folder.
 cli team do this internally. for example when we use ng build or ng serve cli internally do this. inetrnally it use webpack. so after final build all js 
 are included in index.html and this is done by webpack.
+in project one js use another js or image. so what webpack do is to combine all and bundle it into one js. internally angular use webpack to bundle application when we use ng serve or ng build.
+webpack depending on dependency it create bundle iun chunks. thats why when you use ng serve 4 to 5 chunks in green (main, polyfils, runtime, styles, vendor).
 
 AFTER BUILD INSIDE DIST THERE ARE SOME IMP FILE GENERATED: these 5 file needed when we go live in angular.
 
