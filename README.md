@@ -17,6 +17,11 @@
 	    
 	  Note: to install angular without cli use link https://medium.com/angular-in-depth/setting-up-angular-from-scratch-1f518c65d8ab
 
+# Angular style guide like naming convention of file.
+
+  https://angular.io/guide/styleguide
+  
+
 # @ngModule: Our @NgModule decorator has four keys: declarations, imports, providers, and bootstrap.
 	declarations specifies the components that are defined in this module.
 	You have to declare components in a NgModule before you can use them in your templates.
@@ -221,7 +226,7 @@ so when you load application with ng serve it comes from in-memory but when you 
 
 
 # Directive :
-directive helps you to manipulate dom easily. Following are types of directive.
+directive helps you to manipulate dom easily. Following are types of directive. it help us to enhance ui.
 
  > ngModel : used to do binding from ui to component.  ex : <input [(ngModel)]="CustomerModel.CustomerCode" type="text">
 
