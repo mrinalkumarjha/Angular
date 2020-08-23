@@ -137,6 +137,7 @@ sourceRoot: it is a property of angular.json says that where is your source code
 Architect: this property says which type of builder will run for which type of command. angular cli has lots of command like ng build, ng serve, ng test. for each command
 partular builder is selected based on this configuration.
 Here start index file , main file are configured.
+we use styles[] array to add global css. cli will add these files to final bundle which will shipped to production.
 
 # Node: Package.json  : 
 all the packages are listed in package.json file. packages.json is node configuration file. it holds all the dependencies. 

@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "../node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -123,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "BurgerProj"
+    }
+  },
+  "defaultProject": "BurgerProj",
+  "cli": {
+    "analytics": "0d33e35a-922b-473b-9a5b-af351cbde618"
+  }
 }
